@@ -43,6 +43,7 @@
                     <th>Price</th>
                     <th>Quantity</th>
                     <th>Image</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -55,6 +56,15 @@
                         <td>${p.getQuantity()}</td>
                         <td>
                             <img height='50px' src="./assets/images/${p.getImage()}" alt="${p.getName()}"/>
+                        </td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/product?action=update&id=${p.getId()}" class="btn btn-warning">
+                                Update
+                            </a>
+                                
+                            <a href="${pageContext.request.contextPath}/product?action=delete&id=${p.getId()}" class="btn btn-danger">
+                                Delete
+                            </a>
                         </td>
                     </tr>
                 </c:forEach>

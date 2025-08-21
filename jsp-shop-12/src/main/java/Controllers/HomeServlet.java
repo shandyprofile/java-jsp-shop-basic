@@ -38,7 +38,6 @@ public class HomeServlet extends HttpServlet {
         request.setAttribute("contentPage", "home_content.jsp");
         request.setAttribute("username", username);
         
-        
         ProductDAO productDAO = new ProductDAO();
         List<Product> products = productDAO.GetAllProducts();
         request.setAttribute("products", products);
