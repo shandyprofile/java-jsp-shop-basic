@@ -19,8 +19,7 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        request.setAttribute("contentPage", "login_form_content.jsp");
-        request.getRequestDispatcher("/views/pages/login.jsp").forward(request,response);
+        request.getRequestDispatcher("/views/login.jsp").forward(request,response);
     } 
 
     @Override
@@ -30,24 +29,21 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         if (!PasswordValidator.isValid(password)) {
-            request.setAttribute("loginError", "Password must contain uppercase, lowercase, number, special char, and be at least 8 characters.");
-            
-            request.setAttribute("contentPage", "login_form_content.jsp");
-            request.getRequestDispatcher("views/pages/login.jsp").forward(request, response);
+            request.setAttribute("error", "Password must contain uppercase, lowercase, number, special char, and be at least 8 characters.");
+            request.getRequestDispatcher("views/login.jsp").forward(request, response);
             return;
         }
         
         UserDAO users = new UserDAO();
         String uName = users.CheckUser(username, password);
         if (uName != null) {
-            Cookie cookie1 = new Cookie("username", uName);
-            cookie1.setMaxAge(60 * 60); // 1 hour
-            response.addCookie(cookie1);
-            response.sendRedirect(request.getContextPath() + "/home");
+            Cookie cookie = new Cookie("username", uName);
+            cookie.setMaxAge(60 * 60); // 1 hour
+            response.addCookie(cookie);
+            response.sendRedirect(request.getContextPath() + "/product");
         } else {
-            request.setAttribute("contentPage", "login_form_content.jsp");
-            request.setAttribute("loginError", "Username or password are failed!");
-            request.getRequestDispatcher("/views/pages/login.jsp").forward(request,response);
+            request.setAttribute("error", "Username or password are failed!");
+            request.getRequestDispatcher("/views/login.jsp").forward(request,response);
         }
     }
 }

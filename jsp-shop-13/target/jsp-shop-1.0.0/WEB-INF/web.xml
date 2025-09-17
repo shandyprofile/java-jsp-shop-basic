@@ -9,24 +9,32 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     <servlet>
-        <servlet-name>ProductServlet</servlet-name>
-        <servlet-class>Controllers.ProductServlet</servlet-class>
+        <servlet-name>ProductManagementServlet</servlet-name>
+        <servlet-class>Controllers.ProductManagementServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductManagementServlet</servlet-name>
+        <url-pattern>/product</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>Controllers.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>Controllers.LogoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>HomeServlet</servlet-name>
-        <url-pattern>/home</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ProductServlet</servlet-name>
-        <url-pattern>/product</url-pattern>
+        <servlet-name>default</servlet-name>
+        <url-pattern>/assets/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -35,23 +43,7 @@
     </session-config>
     <welcome-file-list>
         <welcome-file>
-            home
+            login
         </welcome-file>
     </welcome-file-list>
-    <servlet>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>Controllers.LoginServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>Logout</servlet-name>
-        <servlet-class>Controllers.LogoutServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>HomeServlet</servlet-name>
-        <servlet-class>Controllers.HomeServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>default</servlet-name>
-        <url-pattern>/assets/*</url-pattern>
-    </servlet-mapping>
 </web-app>
