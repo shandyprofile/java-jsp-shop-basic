@@ -70,3 +70,8 @@
 [2025-08-22 12:43:11] Host: null, User: shandy, Windows: 10.16 - Request: GET /jsp-shop/product from IP: 0:0:0:0:0:0:0:1
 [2025-08-22 12:43:20] Host: null, User: shandy, Windows: 10.16 - Request: GET /jsp-shop/product from IP: 0:0:0:0:0:0:0:1
 [2025-08-22 12:43:36] Host: null, User: shandy, Windows: 10.16 - Request: GET /jsp-shop/product from IP: 0:0:0:0:0:0:0:1
+[2025-09-18 16:18:50] Host: null, User: shandy, Windows: 14.4.1 - Request: GET /jsp-shop/login from IP: 0:0:0:0:0:0:0:1
+[2025-09-18 16:18:50] Host: null, User: shandy, Windows: 14.4.1 - Request: GET /jsp-shop/assets/css/bootstrap.css from IP: 0:0:0:0:0:0:0:1
+[2025-09-18 16:18:50] Host: null, User: shandy, Windows: 14.4.1 - Request: GET /jsp-shop/assets/js/bootstrap.bundle.min.js from IP: 0:0:0:0:0:0:0:1
+[2025-09-18 16:18:50] Host: null, User: shandy, Windows: 14.4.1 - Request: GET /jsp-shop/assets/js/main.js from IP: 0:0:0:0:0:0:0:1
+[2025-09-18 16:18:50] Host: null, User: shandy, Windows: 14.4.1 - Request: GET /jsp-shop/assets/css/style.css from IP: 0:0:0:0:0:0:0:1
