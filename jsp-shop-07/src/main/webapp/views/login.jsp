@@ -4,7 +4,6 @@
     Author     : shandy
 --%>
 
-<%@page import="DALs.UserDAO"%>
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="jakarta.servlet.*" %>
 
@@ -28,10 +27,8 @@
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        UserDAO userDAO = new UserDAO();
-        String name = userDAO.CheckUser(username, password);
-        if (name != null) {
-            Cookie cookie = new Cookie("username", name);
+        if ("admin".equals(username) && "123".equals(password)) {
+            Cookie cookie = new Cookie("username", username);
             cookie.setMaxAge(60 * 60); // 1 hour
             response.addCookie(cookie);
 
