@@ -75,3 +75,5 @@
 [2025-09-18 16:18:50] Host: null, User: shandy, Windows: 14.4.1 - Request: GET /jsp-shop/assets/js/bootstrap.bundle.min.js from IP: 0:0:0:0:0:0:0:1
 [2025-09-18 16:18:50] Host: null, User: shandy, Windows: 14.4.1 - Request: GET /jsp-shop/assets/js/main.js from IP: 0:0:0:0:0:0:0:1
 [2025-09-18 16:18:50] Host: null, User: shandy, Windows: 14.4.1 - Request: GET /jsp-shop/assets/css/style.css from IP: 0:0:0:0:0:0:0:1
+[2025-09-18 16:45:55] Host: null, User: shandy, Windows: 14.4.1 - Request: GET /jsp-shop/login from IP: 0:0:0:0:0:0:0:1
+[2025-09-18 17:13:04] Host: null, User: shandy, Windows: 14.4.1 - Request: POST /jsp-shop/login from IP: 0:0:0:0:0:0:0:1

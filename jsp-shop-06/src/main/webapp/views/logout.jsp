@@ -13,10 +13,9 @@
         for (Cookie c : cookies) {
             if ("username".equals(c.getName())) {
                 c.setMaxAge(0);
-                c.setPath(request.getContextPath());
                 response.addCookie(c);
             }
         }
     }
-    response.sendRedirect(request.getContextPath() + "/views/pages/login.jsp");
+    response.sendRedirect(request.getContextPath() + "/views/login.jsp");
 %>
