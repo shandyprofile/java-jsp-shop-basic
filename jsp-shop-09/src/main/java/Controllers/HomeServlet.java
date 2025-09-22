@@ -31,8 +31,7 @@ public class HomeServlet extends HttpServlet {
             return;
         }
 
-        request.setAttribute("contentPage", "home_content.jsp");
         request.setAttribute("username", username);
-        request.getRequestDispatcher("/views/pages/home.jsp").forward(request,response);
+        request.getRequestDispatcher("/views/home.jsp").forward(request,response);
     } 
 }

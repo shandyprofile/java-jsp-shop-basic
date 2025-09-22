@@ -20,50 +20,15 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="${pageContext.request.contextPath}/views/home.jsp">
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/home">
                     JSP Shop
                 </a>
             </div>
         </nav>
          
         <main class="container py-4">
-            <%
-            //    boolean loggedIn = false;
-            //    Cookie[] cookies = request.getCookies();
-            //    if (cookies != null) {
-            //        for (Cookie c : cookies) {
-            //            if ("username".equals(c.getName())) {
-            //                loggedIn = true;
-            //                break;
-            //            }
-            //        }
-            //    }
-            //    if (loggedIn) {
-            //        response.sendRedirect("home.jsp");
-            //        return;
-            //    }
-
-                if ("POST".equalsIgnoreCase(request.getMethod())) {
-                    String username = request.getParameter("username");
-                    String password = request.getParameter("password");
-                    
-                    UserDAO userDAO = new UserDAO();
-                    String name = userDAO.CheckUser(username, password);
-                    if (name != null) {
-                        Cookie cookie = new Cookie("username", name);
-                        cookie.setMaxAge(60 * 60); // 1 hour
-                        response.addCookie(cookie);
-
-                        response.sendRedirect(request.getContextPath() + "/views/home.jsp");
-                        return;
-                    } else {
-                        request.setAttribute("loginError", "Username or password are failed!");
-                    }
-                }
-            %>
-            
             <h2 class="mb-4">Login Form</h2>
-                <form action="" method="post" class="col-md-4">
+                <form action="${pageContext.request.contextPath}/login" method="post" class="col-md-4">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" id="username" name="username" class="form-control" required>

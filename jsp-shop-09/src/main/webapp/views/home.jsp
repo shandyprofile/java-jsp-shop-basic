@@ -17,7 +17,7 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="${pageContext.request.contextPath}/views/home.jsp">
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/home">
                     JSP Shop
                 </a>
             </div>
@@ -28,29 +28,11 @@
                 <div class="col-lg-8">
                     <div class="card shadow-sm">
                         <div class="card-body">
-                            <%
-                                String username = null;
-                                Cookie[] cookies = request.getCookies();
-                                if (cookies != null) {
-                                    for (Cookie c : cookies) {
-                                        if ("username".equals(c.getName())) {
-                                            username = c.getValue();
-                                            break;
-                                        }
-                                    }
-                                }
-
-                                if (username == null) {
-                                    response.sendRedirect(request.getContextPath() + "/views/login.jsp");
-                                    return;
-                                }
-
-                                request.setAttribute("username", username);
-                            %>
-                            
                             <h1 class="h3 mb-3">
                                 Welcome ${username} to JSP Shop
-                                <a class="m-5" href="${pageContext.request.contextPath}/views/logout.jsp">Logout</a>
+                                <form class="d-inline m-5" action="${pageContext.request.contextPath}/logout" method="post">
+                                    <button type="submit" class="btn btn-outline-primary">Logout</button>
+                                </form>
                             </h1>
                             <p class="mb-0">
                                 This is a simple Home page.
